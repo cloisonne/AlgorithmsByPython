@@ -8,7 +8,7 @@ class ListNode:
 
 class Solution:
     def printListFromTailToHead(self, listNode):
-        if listNode.val == None:
+        if listNode==None or listNode.val == None:
             return
         l = []
         head = listNode

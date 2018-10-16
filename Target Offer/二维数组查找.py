@@ -18,6 +18,21 @@
 
 class Solution:
     # array 二维列表
+
+    def easyFind(self,array,target):
+        row = len(array)
+        col = len(array[0])
+        i=row-1
+        j=0
+        while j<col and i>=0:
+            if target<array[i][j]:
+                i-=1
+            elif target>array[i][j]:
+                j-=1
+            else:
+                return True
+        return False
+
     def Find(self, array, target):
         # 判断数组是否为空
         if array == []:
