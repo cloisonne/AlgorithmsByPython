@@ -6,20 +6,27 @@
 # -*- coding:utf-8 -*-
 class Solution:
     # s 源字符串
-    
+
+    def replaceSpaceByList(self, s):
+        s = list(s)
+        for i in range(len(s)):
+            if s[i] == ' ':
+                s[i] = '%20'
+        return ''.join(s)
+
     # 使用append一次遍历即可替换
     # 由于list的append是O(1)的时间复杂度，除了扩容所导致的时间损耗，该算法复杂度为O(n)
     def replaceSpaceByAppend(self, s):
-        string = list(string)
-	    stringReplace = []
-	    for item in string:
-		    if item == ' ':
-			    stringReplace.append('%')
-			    stringReplace.append('2')
-			    stringReplace.append('0')
-		    else:
-			    stringReplace.append(item)
-	    return "".join(stringReplace)
+        string = list(s)
+        stringReplace = []
+        for item in string:
+            if item == ' ':
+                stringReplace.append('%')
+                stringReplace.append('2')
+                stringReplace.append('0')
+            else:
+                stringReplace.append(item)
+        return "".join(stringReplace)
 
     # 创建新的字符串进行替换
     def replaceSpace1(self, s):
@@ -70,3 +77,4 @@ test = Solution()
 print(test.replaceSpace1(s))
 print(test.replaceSpace2(s))
 print(test.replaceSpace3(s))
+print(test.replaceSpaceByList(s))
