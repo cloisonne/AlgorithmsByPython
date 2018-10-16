@@ -27,6 +27,20 @@ class Solution:
                 ans = ans * 2
         return ans
 
+# 矩形覆盖
+
+    def rectCover(self, number):
+        if number == 0:
+            return 0
+        if number == 1:
+            return 1
+        temp = [1, 2]
+
+        if number >= 3:
+            for i in range(3, number + 1):
+                temp[(i + 1) % 2] = temp[0] + temp[1]
+        return temp[(number + 1) % 2]
+
 test = Solution()
 print(test.Fibonacci(100))
 print(test.jumpFloor(3))

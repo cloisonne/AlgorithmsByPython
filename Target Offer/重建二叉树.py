@@ -12,6 +12,14 @@ class TreeNode:
         self.right = None
 class Solution:
     # 返回构造的TreeNode根节点
+    def reConstructBinaryTree2(self, pre, tin):
+        # write code here
+        root = TreeNode(pre[0])
+        i = tin.index(pre[0])
+        root.left = self.reConstructBinaryTree(pre[1:i+1],tin[:i])
+        root.right = self.reConstructBinaryTree(pre[i+1:],tin[i+1:])
+        return root
+
     def reConstructBinaryTree(self, pre, tin):
         # write code here
         if not pre and not tin:
@@ -28,6 +36,7 @@ pre = [1, 2, 3, 5, 6, 4]
 tin = [5, 3, 6, 2, 4, 1]
 test = Solution()
 newTree = test.reConstructBinaryTree(pre, tin)
+newTree2 = test.reConstructBinaryTree2(pre, tin)
 # 按层序遍历输出树中某一层的值
 def PrintNodeAtLevel(treeNode, level):
     if not treeNode or level < 0:
