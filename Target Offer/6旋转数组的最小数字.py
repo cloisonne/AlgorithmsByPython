@@ -39,7 +39,7 @@ class Solution:
             if rear - front == 1:
                 midIndex = rear
                 break
-            midIndex = (front + rear) // 2
+            midIndex = (front + rear) >> 1
             if rotateArray[front] == rotateArray[rear] and rotateArray[front] == rotateArray[midIndex]:
                 return self.MinInOrder(rotateArray, front, rear)
 

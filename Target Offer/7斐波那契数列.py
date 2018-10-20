@@ -28,6 +28,8 @@ class Solution:
         return ans
 
 # 矩形覆盖
+    # 第一次摆放一块1*2的小矩阵，则摆放方法总共为f(target-2)
+    # 因为，摆放了一块1*2的小矩阵（用√√表示），对应下方的1*2（用××表示）摆放方法就确定了，所以为f(targte-2)
 
     def rectCover(self, number):
         if number == 0:
