@@ -13,6 +13,10 @@ class TreeNode:
 class Solution:
     # 返回构造的TreeNode根节点
     def reConstructBinaryTree2(self, pre, tin):
+        if len(pre)==0:
+            return None
+        if len(pre)==1:
+            return pre[0]
         # write code here
         root = TreeNode(pre[0])
         i = tin.index(pre[0])
