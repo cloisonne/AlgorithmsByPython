@@ -13,8 +13,10 @@ class Solution:
 
         root = sequence[-1]
         length = len(sequence)
+
         if min(sequence) > root or max(sequence) < root:
             return True
+
         index = 0
         # 二叉搜索树的左子树结点小于根节点
         '''

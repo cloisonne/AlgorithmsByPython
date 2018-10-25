@@ -44,8 +44,23 @@ class Solution:
         else:
             return True
 
+    def IsPopOrder3(self, pushV, popV):
+        # write code here
+        if pushV == [] or popV == []:
+            return False
+        stack = []
+        for i in pushV:
+            stack.append(i)
+            while len(stack) and stack[-1] == popV[0]:
+                stack.pop()
+                popV.pop(0)
+            if len(stack):
+                return False
+            else:
+                return True
+
 pushV = [1, 2, 3, 4, 5]
 popV = [4, 5, 3, 2, 1]
 popVF = [4, 5, 2, 1, 3]
 S = Solution()
-print(S.IsPopOrder2(pushV, popVF))
+print(S.IsPopOrder3(pushV, popV))

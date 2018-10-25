@@ -9,6 +9,22 @@ class ListNode:
         self.val = x
         self.next = None
 class Solution:
+
+    def ReverseList(self, pHead):
+        # write code here
+        if not pHead:
+            return
+        elif not pHead.next:
+            return pHead
+        pre = None
+        nextt = None
+        while pHead:
+            nextt = pHead.next
+            pHead.next = pre
+            pre = pHead
+            pHead = nextt
+        return pre
+
     # 返回ListNode
     def ReverseList(self, pHead):
         pReversedHead = None
