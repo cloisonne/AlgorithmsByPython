@@ -22,4 +22,23 @@ def modiBubbleSort(alist):
         passnum -= 1
     return alist
 
-print(bubbleSort(alist))
+def bubbleSort2(array):
+    for i in range(len(array)):
+        for j in range(len(array)-1-i):
+            if array[j]>array[j+1]:
+                array[j],array[j+1] = array[j+1],array[j]
+    return array
+
+def modiBuddleSort2(array):
+    flag = True
+    i = 0
+    while i!=len(array) and flag:
+        flag = False
+        for j in range(len(array)-1-i):
+            if array[j]>array[j+1]:
+                array[j],array[j+1] = array[j+1],array[j]
+                flag = True
+        i+=1
+    return array
+
+print(modiBuddleSort2(alist))

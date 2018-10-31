@@ -47,6 +47,7 @@ class Solution:
         return pStr
 
 ss = 'acb'
+sss = 'aabc'
 S = Solution()
 # print(S.Permutation(ss))
-print(S.group(ss))
+print(S.Permutation(sss))

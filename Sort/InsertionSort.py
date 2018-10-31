@@ -1,3 +1,5 @@
+# 时间复杂度 最好是O(n) 最差是O(n^2)
+
 def insertionSort(alist):
     for key, item in enumerate(alist):
         index = key
@@ -21,5 +23,16 @@ def insertionSort2(alist):
         alist[position] = currentvalue
 
     return alist
+
+def insertSort3(array):
+    for i  in range(1,len(array)):
+        cur = array[i]
+        index = i
+
+        while index>0 and array[index-1]>cur:
+            array[index-1] = array[index]
+            index-=1
+        array[index] = cur
+    return array
 
 print(insertionSort2(alist))

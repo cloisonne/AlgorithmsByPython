@@ -30,6 +30,27 @@ def partition(alist, first, last):
     alist[rightmark], alist[first] = alist[first], alist[rightmark]
     return rightmark
 
+def quickSort2(array,start,end):
+    if start<=end:
+        return
+    k = array[start]
+    left = start
+    right = end
+
+    while left<right:
+        while left<right and array[right]>k:
+            right-=1
+        array[left],array[right] = array[right],array[left]
+
+        while left<right and array[left<=k]:
+            left+=1
+        array[left],array[right] = array[right],array[left]
+
+    quickSort2(array,start,left-1)
+    quickSort2(array,left,end)
+    return  array
+
+
 alist = [54,26,93,17,77,31,44,55,20]
 alist2 = [1]
 quickSort(alist2)
